@@ -1,0 +1,22 @@
+
+
+<button (click) = "obtenerRegistroBD()">Obtener registro</button>
+
+    <div *ngIf="loginCollections.length > 0 ">
+        <p>
+            Cantidad de usuarios logueados: {{countLogin}}
+        </p>
+        
+    </div>
+
+<button routerLink="/ahorcado">Ahorcado</button>
+<button routerLink="/preguntados">Preguntados</button>
+<button routerLink="/memoria">Memoria</button>
+<button routerLink="/quien-soy">Quien soy</button>
+
+
+<button (click) = "cerrarSesion('/login')">Cerrar Sesion</button>
+
+<p>
+    {{auth.currentUser?.email}}
+</p>

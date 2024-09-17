@@ -1,0 +1,19 @@
+<h1>sala de juegos</h1>
+
+<h2>Registrar usuario</h2>
+
+
+    <div>
+        <input type ='text' placeholder ='usuario' [(ngModel)] ='newUser'>
+    </div>
+    <div>
+        <input type ='text' placeholder ='contraseña' [(ngModel)] ='newPassword'>
+    </div>
+    
+    <div>
+        
+        <button (click) = "goToLogin('/login')">Ir al login</button>
+        <button (click) = "registrar('/home')">Registrarse</button>
+</div>
+
+
