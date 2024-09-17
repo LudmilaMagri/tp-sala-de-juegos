@@ -5,7 +5,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AhorcadoComponent } from './componentes/juegos/ahorcado/ahorcado.component';
 import { PreguntadosComponent } from './componentes/juegos/preguntados/preguntados.component';
-import { MemoriaComponent } from './componentes/juegos/memoria/memoria.component';
+import { MayorOMenorComponent } from '../componentes/juegos/mayor-o-menor/mayor-o-menor.component';
 
 export const routes: Routes = [
     {
@@ -30,7 +30,7 @@ export const routes: Routes = [
         path: 'preguntados', component: PreguntadosComponent
     },
     {
-        path: 'memoria', component: MemoriaComponent
+        path: 'mayor-o-menor', component: MayorOMenorComponent
     },
     {
         path: '**', component: LoginComponent
