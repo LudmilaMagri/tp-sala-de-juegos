@@ -1,22 +1,58 @@
-
-
-<button (click) = "obtenerRegistroBD()">Obtener registro</button>
-
-    <div *ngIf="loginCollections.length > 0 ">
-        <p>
-            Cantidad de usuarios logueados: {{countLogin}}
-        </p>
-        
+  <div class = "d-flex justify-content-end mb-3">
+    <button class="btn btn-danger" (click)= "cerrarSesion('/login')">Cerrar sesión</button>
+  </div>
+  
+  <div class="row row-cols-1 row-cols-md-4 g-6" id = "card-container">
+    <div class="col">
+      <div class="card h-100" id = "cards">
+        <img src="ahorcado.png" class="card-img-top" alt="...">
+        <h4 class="card-title">Ahorcado</h4>
+        <div class="card-body">
+          <p class="card-text">Podrás adivinar la palabra que se esconde? Probá letra por letra. Ojo que tenés 6 vidas!!</p>
+        </div>
+        <button type="button" routerLink="/juegos/ahorca2"class="btn btn-dark">Jugar!</button>
+      </div>
     </div>
+    
+    <div class="col">
+      <div class="card h-100" id = "cards">
+        <img src="preguntados.png" class="card-img-top" alt="...">
+        <h4 class="card-title">Preguntados</h4>
+        <div class="card-body">
+          <p class="card-text">Demostrá tus conocimientos con este juego de trivia! Divertido y didáctico </p>
+        </div>
+        <button type="button" routerLink="/juegos/preguntados"class="btn btn-dark">Jugar!</button>
+        
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" id = "cards">
+        <img src="pokeballs.png" class="card-img-top" alt="...">
+        <h4 class="card-title">Adiviná el Pokémon</h4>
+        <div class="card-body">
+          <p class="card-text">Creciste mirando Pokémon? Lucite en este juego adivinando todos los pokemones que puedas!</p>
+        </div>
+        <button type="button" routerLink="/juegos/pokemon"class="btn btn-dark">Jugar!</button>
+        
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" id = "cards">
+        <img src="mayoromenor2.png" class="card-img-top" alt="...">
+        <h4 class="card-title">Mayor o Menor</h4>
+        <div class="card-body">
+          <p class="card-text">El numero será mayor o menor? Intentá adivinar con la menor cantidad de intentos posibles!</p>
+        </div>
+        <button type="button" routerLink="/juegos/mayor-o-menor"class="btn btn-dark">Jugar!</button>
+        
+      </div>
+    </div>
+  </div>
 
-<button routerLink="/ahorcado">Ahorcado</button>
-<button routerLink="/preguntados">Preguntados</button>
-<button routerLink="/mayor-o-menor">Mayor o Menor</button>
-<button routerLink="/quien-soy">Quien soy</button>
-
-
-<button (click) = "cerrarSesion('/login')">Cerrar Sesion</button>
-
-<p>
-    {{auth.currentUser?.email}}
-</p>
+  <div class="button-group">
+    <button type="button" routerLink="/chat" class="btn btn-dark">Chateá!</button>
+    <button type="button" routerLink="/quien-soy" class="btn btn-dark">Quién soy</button>
+  </div>
+  
+  
+  

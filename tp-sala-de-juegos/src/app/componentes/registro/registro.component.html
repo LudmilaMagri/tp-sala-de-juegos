@@ -1,19 +1,18 @@
-<h1>sala de juegos</h1>
-
-<h2>Registrar usuario</h2>
 
 
-    <div>
-        <input type ='text' placeholder ='usuario' [(ngModel)] ='newUser'>
-    </div>
-    <div>
-        <input type ='text' placeholder ='contraseña' [(ngModel)] ='newPassword'>
-    </div>
-    
-    <div>
-        
-        <button (click) = "goToLogin('/login')">Ir al login</button>
-        <button (click) = "registrar('/home')">Registrarse</button>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Registrar Usuario</h1>
+    <form>
+        <div class="mb-3">
+            <input type="text" class=" form-control" placeholder="Usuario"[(ngModel)] ='newUser' required>
+        </div>
+        <div class="mb-3">
+            <input type ='text' class=" form-control" placeholder ='Contraseña' [(ngModel)] ='newPassword' required>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type= "button" class="btn btn-link"(click) = "goToLogin('/login')">Ir al login</button>
+            <button type= "button" class="btn btn-primary"(click) = "registrar('/home')">Registrarse</button>
+        </div>
+    </form>
 </div>
-
-

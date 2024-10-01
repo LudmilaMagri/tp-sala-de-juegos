@@ -1,1 +1,40 @@
-<p>mayor-o-menor works!</p>
+<div class="container text-center">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header titulo-personalizado text-white" id = titulo>
+            <h3 class="titulo-custom">Juego Mayor o Menor</h3>
+          </div>
+          <div class="card-body">
+            <div class="card-title">
+              <p *ngIf="!finalJuego" class="lead">Adivina si la siguiente carta es mayor, menor o igual</p>
+              <p *ngIf="finalJuego" class="lead text-danger">¡Perdiste!</p>
+            </div>
+  
+            <div class="mb-4">
+              <!-- Mostrar la carta actual -->
+              <img *ngIf="actualCarta" [src]="actualCarta.image" alt="Carta actual" class="img-fluid carta-img">
+            </div>
+  
+            <div class="mb-3">
+              <p *ngIf="!finalJuego">Puntaje actual: <strong>{{ puntaje }}</strong></p>
+              <p *ngIf="finalJuego">Puntaje final: <strong>{{ puntajeFinal }}</strong></p>
+            </div>
+  
+            <!-- Botones para elegir Mayor, Menor o Igual -->
+            <div *ngIf="!finalJuego">
+              <button class="btn btn-custom-mayor me-2" (click)="robarCarta('mayor')">Mayor</button>
+              <button class="btn btn-custom-menor me-2" (click)="robarCarta('menor')">Menor</button>
+              <button class="btn btn-custom-igual" (click)="robarCarta('igual')">Igual</button>
+            </div>
+  
+            <!-- Botón para reiniciar el juego -->
+            <div *ngIf="finalJuego">
+              <button class="btn btn-custom-reiniciar" (click)="iniciarJuego()">Reiniciar Juego</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

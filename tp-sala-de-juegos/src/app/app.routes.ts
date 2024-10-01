@@ -6,6 +6,7 @@ import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AhorcadoComponent } from './componentes/juegos/ahorcado/ahorcado.component';
 import { PreguntadosComponent } from './componentes/juegos/preguntados/preguntados.component';
 import { MayorOMenorComponent } from '../componentes/juegos/mayor-o-menor/mayor-o-menor.component';
+import { ChatComponent } from './componentes/chat/chat.component';
 
 export const routes: Routes = [
     {
@@ -24,15 +25,13 @@ export const routes: Routes = [
         path: 'quien-soy', component: QuienSoyComponent
     },
     {
-        path: 'ahorcado', component: AhorcadoComponent
+        path: 'juegos', loadChildren: () => import('./modulos/juegos/juegos.module').then((m) => m.JuegosModule)
     },
     {
-        path: 'preguntados', component: PreguntadosComponent
-    },
-    {
-        path: 'mayor-o-menor', component: MayorOMenorComponent
+        path: 'chat', component: ChatComponent
     },
     {
         path: '**', component: LoginComponent
-    },
+    }
+    
 ];

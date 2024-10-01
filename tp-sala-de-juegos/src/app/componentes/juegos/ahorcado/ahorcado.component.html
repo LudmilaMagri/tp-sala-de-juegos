@@ -1,1 +1,63 @@
-<p>ahorcado works!</p>
+<ng-container *ngIf="palabra;else Cargando">
+    <div class="container">
+
+        <div class="space-between">
+            <button (click)="reiniciarJuego()" class="btn btn-primary">Reiniciar juego</button>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3>
+                    Puntuacion: <span class="text-primary">{{intentos * 5}}</span>
+                </h3>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <p>{{palabra}}</p>
+                <div class="col-auto d-none d-lg-block" id="expositor-vidas">
+                    <img class="bd-placeholder-img" width="150" height="150" id="img-vidas" [src]="imagen">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <h1 *ngFor="let letra of letrasPalabra()" class="mx-3">
+                        <span *ngIf="letrasSeleccionadas.includes(letra); else hidden"> {{letra}} </span>
+                        <ng-template #hidden>
+                            <span *ngIf="!finDeJuego; else respuesta"> __ </span>
+                        </ng-template>
+                        <ng-template #respuesta>
+                            <span class="text-success"> {{letra}} </span>
+                        </ng-template>
+                    </h1>
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+                <h3>Intentos: <span class="text-primary">{{intentos}}</span></h3>
+                <span class="letra-elejida" [class.correcta]="letraEnLaPalabra(letra)"
+                    *ngFor="let letra of letrasSeleccionadas">
+                    {{letra}}
+                </span>
+            </div>
+            <div class="col-12 mt-5">
+                <div class="char-container">
+                    <span [class.disabled]="letrasSeleccionadas.includes(letra)" class="char"
+                        (click)="elegirLetra(letra)" *ngFor="let letra of abecedario">
+                        {{letra}}
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</ng-container>
+
+<ng-template #Cargando>
+    <div class="col-xs-12">
+        <div class="text-center">
+            
+            <iframe src="https://giphy.com/embed/12BJdh2M9SwciQ" width="480" height="403" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/stick-figure-simple-drawing-12BJdh2M9SwciQ">via GIPHY</a></p>
+
+        </div>
+    </div>
+</ng-template>

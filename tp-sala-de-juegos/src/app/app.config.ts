@@ -7,9 +7,10 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { enviroment  } from '../enviroment';
+import { provideHttpClient  } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideRouter(routes), provideFirebaseApp(() => initializeApp(enviroment)), 
+    provideRouter(routes), provideHttpClient(),provideFirebaseApp(() => initializeApp(enviroment)), 
     provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage())]
 };

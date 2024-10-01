@@ -1,0 +1,43 @@
+.container{
+    background-color: white;
+}
+.char-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.char {
+    cursor: pointer;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vw;
+    height: 5vw;
+    min-width: 10px;
+    min-height: 10px;
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+@media (max-width: 600px){
+    .char {
+        border: none;
+    }
+  }
+
+.char:hover {
+    background-color: rgba(172, 255, 47, 0.384);
+}
+
+.disabled {
+    pointer-events: none;
+    background-color: grey;
+}
+
+
+.space-beteen {
+    display: flex;
+    justify-content: space-around;
+}

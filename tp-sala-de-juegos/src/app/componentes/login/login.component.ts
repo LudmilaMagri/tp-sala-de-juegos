@@ -19,13 +19,17 @@ import  Swal from 'sweetalert2';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-
-user: string = '';
-password: string = '';
-logUser: string = '';
-logError: boolean = false;  
-
-
+  
+  user: string = '';
+  password: string = '';
+  logUser: string = '';
+  logError: boolean = false;  
+  
+  
+  constructor (public auth: Auth, private firestore: Firestore, private router: Router)
+  {
+  
+  }
 
 
 goToRegistrar(path: string){
@@ -77,11 +81,11 @@ registroLoginBD()
   }) 
 }
 
+autologuearse(){
+  this.user = 'test@test.com';
+  this.password = 'contraseña';
+  this.login('/home');
+}
 
-
-  constructor (public auth: Auth, private firestore: Firestore, private router: Router)
-  {
-
-  }
 
 }

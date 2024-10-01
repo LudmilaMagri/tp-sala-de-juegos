@@ -1,0 +1,60 @@
+#card-container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+#cards{
+    background-color: rgb(221, 185, 228);
+    opacity: 0.8;
+}
+
+.card-title{
+    color: black;
+    margin: 0 auto;
+}
+
+p
+{
+    margin-top: 1rem;
+}
+
+.link
+{
+    color: white;
+    font-weight: 600;
+}
+
+.link2
+{
+    color: black;
+    font-weight: 600;
+}
+
+#expositor-juegos
+{
+    margin-top: 3.1rem;
+    width: 100%;
+    padding-left: 1rem;
+}
+
+.card-text
+{
+    height: fit-content;
+    margin: 0 auto;
+}
+
+.bd-placeholder-img
+{
+    padding: 1rem;
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .button-group .btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }

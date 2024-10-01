@@ -1,0 +1,24 @@
+.pokemonImagen {
+    max-height: 200px;
+    max-width: 2000px;
+    object-fit: contain;
+    background-color: #f8f9fa; /* Fondo suave para que resalte el Pokémon */
+  }
+  
+  .card {
+    border: none;
+  }
+  
+  .input-group input {
+    border-radius: 0;
+  }
+  
+  .input-group button {
+    border-radius: 0;
+  }
+  
+  .btn-custom{
+    background-color: #FFD700	;
+    color: #0000FF;
+    border: none;
+  }
