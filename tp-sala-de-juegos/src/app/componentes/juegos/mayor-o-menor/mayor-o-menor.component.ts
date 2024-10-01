@@ -37,7 +37,6 @@ export class MayorOMenorComponent implements OnInit, OnDestroy{
       this.actualMazo = mazoMezclado;
       this.idMazo = this.actualMazo.deck_id;
 
-          // Verificar si el mazo tiene cartas
     if(this.actualMazo.deck_id){
       this.robarCartaInicial();
     } else {
