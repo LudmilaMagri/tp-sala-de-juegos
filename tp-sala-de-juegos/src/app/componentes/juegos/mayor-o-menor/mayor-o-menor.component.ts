@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MayorOMenorService } from '../../../services/mayor-o-menor/mayor-o-menor.service';
 import { Subscription } from 'rxjs';
 import { Auth } from '@angular/fire/auth';
+import { PuntajeService } from '../../../services/puntaje.service';
 
 @Component({
   selector: 'app-mayor-o-menor',
@@ -20,7 +21,7 @@ export class MayorOMenorComponent implements OnInit, OnDestroy{
   finalJuego:boolean = false
   
 
-  constructor(public auth:Auth, public mayorOMenorService: MayorOMenorService){
+  constructor(public auth:Auth, public mayorOMenorService: MayorOMenorService, public registroPuntaje: PuntajeService){
 
   }
 
@@ -106,6 +107,7 @@ robarCartaInicial() {
     this.puntaje = 0;
     this.finalJuego = true;
     this.sub.unsubscribe();
+    this.registroPuntaje.registroPuntaje(this.puntajeFinal, 'Mayor o Menor');
   }
 
   obtenerValorNum(valorCarta: string):number{

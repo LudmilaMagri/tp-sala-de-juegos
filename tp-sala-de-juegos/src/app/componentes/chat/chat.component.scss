@@ -1,5 +1,53 @@
-.card-body {
-  background-color: #d3dce6; 
+// .card-body {
+//   background-color: #d3dce6; 
+// }
+
+// .card-body p {
+//   margin: 0;
+// }
+
+// .input-group-text {
+//   background-color: #007bff;
+//   color: white;
+//   border: none;
+// }
+
+// .input-group input {
+//   border: 1px solid #007bff;
+//   border-radius: 0;
+// }
+
+// button {
+//   background-color: #007bff;
+//   color: white;
+// }
+
+// button:hover {
+//   background-color: #0056b3;
+// }
+
+// .text-left{
+//   text-align: left;
+// }
+// .text-right{
+//   text-align: right;
+// }
+
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.user-own {
+  color: blue; /* Color para el usuario autenticado */
+}
+
+.user-other {
+  color: green; /* Color para otros usuarios */
 }
 
 .card-body p {

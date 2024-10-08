@@ -27,6 +27,14 @@ export class RegistroComponent {
   }
 
   registrar(path: string){
+    if(this.newPassword.trim().length < 6){
+      Swal.fire({
+        title: "Contraseña muy corta",
+        text: "La contraseña debe tener al menos 6 caracteres",
+        icon: "error"
+      });
+      return;
+    }
     createUserWithEmailAndPassword(this.auth, this.newUser, this.newPassword).then((res)=>
     {
       if(res.user.email !== null) this.logUser = res.user.email;
@@ -41,10 +49,10 @@ export class RegistroComponent {
     {
       this.registroError = true;
       switch (e.code){
-        case 'auth/invalid-email-already-in-use':
+        case 'auth/email-already-in-use':
           Swal.fire({
             title: "El mail ingresado ya esta en uso",
-            text: "Ingresa otro mail!",
+            text: "Ingresa otro mail",
             icon: "error"
           });
         break;

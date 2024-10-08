@@ -1,27 +1,17 @@
-<!-- <div *ngFor="let chat of chatCollection">
-<p>{{chat.usuario}}</p>
-<p>{{chat.mensaje}}</p>
-<p>
-    {{(chat.fecha.seconds * 1000) | date: 'dd/mm/yy hh:mm'}}
-</p>
-</div>
-
-<div class="input-group mb-3">
-    <span class="input-group-text">
-        <i class="bx bx-user"></i>
-    </span>
-    <input type="text" class="form-control form-control-lg fs-6" placeholder="enviar mensaje" [(ngModel)]="mensaje" (keydown.enter)="registroChatBD()" [ngModelOptions]="{standalone: true}">
-</div>
-<button (click) = 'registroChatBD()'>Enviar</button> -->
-
-<div class="container mt-4">
-    <!-- Contenedor del chat -->
+<!-- <div class="container mt-4">
     <div class="card" style="height: 500px; overflow-y: auto;">
       <div class="card-body">
-        <!-- Mensajes del chat -->
-        <div *ngFor="let chat of chatCollection" class="mb-3">
-          <p class="mb-1"><strong>{{chat.usuario}}</strong></p>
-          <p class="mb-1">{{chat.mensaje}}</p>
+
+        <div *ngFor="let chat of chatCollection" class="mb-3"
+          [ngClass]="{'text-rigth': chat.usuario === auth.currentUser?.email, 'text-left': chat.usuario !== auth.currentUser?.email}">
+
+          <p class="mb-1" [ngStyle]="{'color': chat.usuario === auth.currentUser?.email ? 'blue' : 'green'}">
+            <strong>{{chat.usuario}}</strong>
+          </p>
+          <p class="mb-1" [ngStyle]="{'color': chat.usuario === auth.currentUser?.email ? 'blue' : 'black'}">
+            {{chat.mensaje}}
+            </p>
+
           <p class="text-muted" style="font-size: 12px;">
             {{(chat.fecha.seconds * 1000) | date: 'dd/MM/yy hh:mm'}}
           </p>
@@ -30,7 +20,41 @@
       </div>
     </div>
   
-    <!-- Input para enviar mensaje -->
+    <div class="input-group mt-3">
+      <span class="input-group-text">
+        <i class="bx bx-user"></i>
+      </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Escribe un mensaje..."
+        [(ngModel)]="mensaje"
+        (keydown.enter)="registroChatBD()"
+        [ngModelOptions]="{standalone: true}"
+      />
+      <button class="btn btn-primary" (click)="registroChatBD()">Enviar</button>
+    </div>
+  </div>
+   -->
+   <div class="container mt-4">
+    <div class="card" style="height: 500px; overflow-y: auto;">
+      <div class="card-body">
+        
+        <div *ngFor="let chat of chatCollection" class="mb-3"
+        [ngClass]="{'text-right': chat.usuario ===  auth.currentUser?.email, 'text-left': chat.usuario !==  auth.currentUser?.email}">
+        <p class="mb-1" 
+           [ngClass]="{'user-own': chat.usuario ===  auth.currentUser?.email, 'user-other': chat.usuario !==  auth.currentUser?.email}">
+          <strong>{{chat.usuario}}</strong>
+        </p>
+        <p class="mb-1">{{chat.mensaje}}</p>
+          <p class="text-muted" style="font-size: 12px;">
+            {{(chat.fecha.seconds * 1000) | date: 'dd/MM/yy hh:mm'}}
+          </p>
+          <hr />
+        </div>
+      </div>
+    </div>
+  
     <div class="input-group mt-3">
       <span class="input-group-text">
         <i class="bx bx-user"></i>

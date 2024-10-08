@@ -1,1 +1,23 @@
-<p>preguntados works!</p>
+<main class="preguntados-container">
+    <div class="flag-container">
+      <img [src]="flagUrl" alt="Bandera" class="flag-img" />
+    </div>
+  
+    <div class="opciones-container">
+      <h2>Selecciona el país de la bandera:</h2>
+      <div class="opciones">
+        <button
+          *ngFor="let opcion of opcionActual; let i = index"
+          (click)="corroborarRespuesta(i)"
+          class="opcion-btn"
+        >
+          {{ opcion }}
+        </button>
+      </div>
+    </div>
+  
+    <div class="puntaje-container">
+      <p>Puntaje: {{ puntaje }}</p>
+    </div>
+  </main>
+  

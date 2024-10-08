@@ -58,6 +58,21 @@ login(path: string)
         icon: "error"
       });
       break;
+      case 'auth/invalid-credential':
+        Swal.fire({
+          title: "Contraseña incorrecta",
+          text: "Volve a ingresar la contraseña",
+          icon: "error"
+        });
+        break;
+        case 'auth/too-many-requests':
+        Swal.fire({
+          title: "Demasiados intentos fallidos",
+          text: "Has realizado demasiados intentos fallidos. Por favor, espera un momento antes de volver a intentarlo.",
+          icon: "error"
+        });
+        break;
+        
       default:
         Swal.fire({
           title: e.code,

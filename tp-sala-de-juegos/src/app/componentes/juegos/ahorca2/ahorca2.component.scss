@@ -1,0 +1,88 @@
+main {
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+  
+      .container-hangman {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+        .hang-man-header {
+          text-align: center;
+          h1 {
+            font-size: 2.5rem;
+            color: #333;
+          }
+          hr {
+            width: 50%;
+            margin: 10px auto;
+          }
+        }
+  
+        .row {
+          margin-bottom: 20px;
+  
+          .col.text-center {
+            img.img-hangman {
+              max-width: 200px;
+              height: auto;
+              margin-bottom: 20px;
+            }
+  
+            h3 {
+              font-size: 1.5rem;
+              color: #555;
+  
+              small {
+                font-size: 1rem;
+                color: #999;
+              }
+            }
+          }
+  
+          .col {
+            .button-letter {
+              background-color: #007bff;
+              border: none;
+              color: #fff;
+              padding: 10px;
+              margin: 5px;
+              font-size: 1.2rem;
+              border-radius: 5px;
+              transition: background-color 0.3s ease;
+  
+              &:hover {
+                background-color: #98e05d;
+              }
+            }
+  
+            .letter-clicked {
+              background-color: #6c757d;
+            }
+  
+            .letter-no-clicked {
+              background-color: #28a745;
+            }
+          }
+  
+          .btn-restart-game {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+  
+            &:hover {
+              background-color: #c82333;
+            }
+          }
+        }
+      }
+    }
+  }
+  

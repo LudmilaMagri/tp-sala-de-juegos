@@ -35,7 +35,8 @@ registroChatBD()
     'fecha' : new Date(), 
     'usuario': this.auth.currentUser?.email,
     'mensaje': this.mensaje
-  }) 
+  });
+  this.mensaje = '';
 }
 
 obtenerChatsBD(){

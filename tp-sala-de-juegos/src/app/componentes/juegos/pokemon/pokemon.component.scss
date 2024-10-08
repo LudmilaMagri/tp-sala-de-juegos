@@ -1,24 +1,60 @@
+// .pokemonImagen {
+//     max-height: 2000px;
+//     max-width: 2000px;
+//     object-fit: contain;
+//     background-color: #f8f9fa; 
+//   }
+  
+//   .card-body {
+//     border: none;
+
+//   }
+  
+//   .input-group input {
+//     border-radius: 0;
+//   }
+  
+//   .input-group button {
+//     border-radius: 0;
+//   }
+  
+//   .btn-custom{
+//     background-color: #FFD700	;
+//     color: #0000FF;
+//     border: none;
+//   }
+
 .pokemonImagen {
-    max-height: 200px;
-    max-width: 2000px;
-    object-fit: contain;
-    background-color: #f8f9fa; 
-  }
-  
-  .card {
-    border: none;
-  }
-  
-  .input-group input {
-    border-radius: 0;
-  }
-  
-  .input-group button {
-    border-radius: 0;
-  }
-  
-  .btn-custom{
-    background-color: #FFD700	;
-    color: #0000FF;
-    border: none;
-  }
+  max-height: 1500px; /* Aumentar altura máxima */
+  max-width: 1500px;  /* Aumentar ancho máximo */
+  background-color: #f0f0f0;
+}
+
+
+.card {
+  background-color: #f0f0f0; /* Amarillo Pokémon */
+  border: none;
+}
+
+.card-body {
+  border: none;
+}
+
+.btn-custom {
+  background-color: #FFD700; /* Botones blancos */
+  color: #0000FF; /* Texto azul */
+  border: 2px solid #0000FF; /* Borde amarillo Pokémon */
+  font-weight: bold;
+}
+
+.btn-custom:hover {
+  background-color: #f0f0f0; /* Cambiar a gris claro al pasar el mouse */
+}
+
+.input-group input {
+  border-radius: 0;
+}
+
+.input-group button {
+  border-radius: 0;
+}

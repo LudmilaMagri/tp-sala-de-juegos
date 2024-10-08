@@ -7,6 +7,7 @@ import { AhorcadoComponent } from './componentes/juegos/ahorcado/ahorcado.compon
 import { PreguntadosComponent } from './componentes/juegos/preguntados/preguntados.component';
 import { MayorOMenorComponent } from '../componentes/juegos/mayor-o-menor/mayor-o-menor.component';
 import { ChatComponent } from './componentes/chat/chat.component';
+import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
 
 export const routes: Routes = [
     {
@@ -29,6 +30,9 @@ export const routes: Routes = [
     },
     {
         path: 'chat', component: ChatComponent
+    },
+    {
+        path: 'encuesta', component: EncuestaComponent
     },
     {
         path: '**', component: LoginComponent

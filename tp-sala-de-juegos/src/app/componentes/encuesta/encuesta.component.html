@@ -1,0 +1,206 @@
+<!-- <div class="bg-light" id="encuesta-container">
+    <div class="row align-items-center justify-content-center h-100 w-100 g-0 px-4 px-sm-0">
+      <div class="col col-sm-6 col-lg-7 col-xl-6">
+        <div class="text-center mb-4">
+          <h3 class="titulo-custom">Encuesta</h3>
+          <p class="text-secondary">Por favor, completa todos los campos</p>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="enviarForm()">
+          <div class="input-group mb-3">
+            <span class="input-group-text">
+              <i class="bx bx-user"></i>
+            </span>
+            <input type="text" class="form-control form-control-lg fs-6 custom-input" placeholder="Nombre" formControlName="nombre">
+          </div>
+          <div *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
+            <small class="text-danger" *ngIf="nombre?.hasError('required')">Campo requerido</small>
+            <small class="text-danger" *ngIf="nombre?.hasError('pattern')">Solo se aceptan letras</small>
+          </div>
+
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">
+              <i class="bx bx-user"></i>
+            </span>
+            <input type="text" class="form-control form-control-lg fs-6 custom-input" placeholder="Apellido" formControlName="apellido">
+          </div>
+          <div *ngIf="apellido?.invalid && (apellido?.touched || apellido?.dirty)">
+            <small class="text-danger" *ngIf="apellido?.hasError('required')">Campo requerido</small>
+            <small class="text-danger" *ngIf="apellido?.hasError('pattern')">Solo se aceptan letras</small>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">
+              <i class="bx bx-calendar"></i>
+            </span>
+            <input type="text" class="form-control form-control-lg fs-6 custom-input" placeholder="Edad" formControlName="edad">
+          </div>
+          <div *ngIf="edad?.invalid && (edad?.touched || edad?.dirty)">
+            <small class="text-danger" *ngIf="edad?.hasError('required')">Campo requerido</small>
+            <small class="text-danger" *ngIf="edad?.hasError('pattern')">Solo se aceptan números</small>
+            <small class="text-danger" *ngIf="edad?.hasError('min') || edad?.hasError('max')">Edad entre 18 y 99 años</small>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">
+              <i class="bx bx-phone"></i>
+            </span>
+            <input type="text" class="form-control form-control-lg fs-6 custom-input" placeholder="Teléfono" formControlName="telefono">
+          </div>
+          <div *ngIf="telefono?.invalid && (telefono?.touched || telefono?.dirty)">
+            <small class="text-danger" *ngIf="telefono?.hasError('required')">Campo requerido</small>
+            <small class="text-danger" *ngIf="telefono?.hasError('pattern')">Solo se aceptan números</small>
+            <small class="text-danger" *ngIf="telefono?.hasError('maxLength')">Máximo 10 dígitos</small>
+          </div>
+
+          <div class="input-group mb-3">
+            <label for="pregunta1">Seleccione el juego que le gustó mas</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Ahorcado
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Preguntados
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Pokemon
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Mayor o Menor
+                </label>
+              </div>
+              </div>
+
+          <div class="input-group mb-3">
+              <label for="customRange2" class="form-label">¿Del 1 al 10 cuanto te gusto?</label>
+              <input type="range" class="form-range"  id="pregunta2"  min="0" max="100"  formControlName="pregunta2">
+              <div *ngIf="pregunta2?.invalid && (pregunta2?.touched || pregunta2?.dirty)">
+                  <small class="text-danger" *ngIf="pregunta2?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+
+          <div class="input-group mb-3">
+            <label for="pregunta3">Contanos qué juego te gustaría que incluyamos</label>
+          </div>
+          <div *ngIf="pregunta3?.invalid && (pregunta3?.touched || pregunta3?.dirty)">
+            <small class="text-danger" *ngIf="pregunta3?.hasError('required')">Campo requerido</small>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Escribi tu comentario</label>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" (click)="enviarForm()" type="submit" [disabled]="form.invalid">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="bg-light py-4" id="encuesta-container">
+    <div class="row align-items-center justify-content-center h-100 w-100 g-0 px-4 px-sm-0">
+      <div class="col col-sm-8 col-lg-6 col-xl-5">
+        <div class="text-center mb-4">
+          <h1 class="titulo-custom">Encuesta</h1>
+          <p class="text-secondary">Por favor, complete todos los campos</p>
+        </div>
+  
+        <form [formGroup]="form" (ngSubmit)="enviarForm()">
+          <div class="form-group mb-3">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control form-control-lg custom-input" id="nombre" placeholder="Nombre" formControlName="nombre">
+            <small *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)" class="text-danger">
+              {{ nombre?.hasError('required') ? 'Campo requerido' : 'Solo se aceptan letras' }}
+            </small>
+          </div>
+  
+          <!-- Apellido -->
+          <div class="form-group mb-3">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control form-control-lg custom-input" id="apellido" placeholder="Apellido" formControlName="apellido">
+            <small *ngIf="apellido?.invalid && (apellido?.dirty || apellido?.touched)" class="text-danger">
+              {{ apellido?.hasError('required') ? 'Campo requerido' : 'Solo se aceptan letras' }}
+            </small>
+          </div>
+  
+          <!-- Edad -->
+          <div class="form-group mb-3">
+            <label for="edad">Edad</label>
+            <input type="number" class="form-control form-control-lg custom-input" id="edad" placeholder="Edad" formControlName="edad">
+            <small *ngIf="edad?.invalid && (edad?.dirty || edad?.touched)" class="text-danger">
+              {{ edad?.hasError('required') ? 'Campo requerido' : 'Edad entre 18 y 99 años' }}
+            </small>
+          </div>
+  
+          <!-- Teléfono -->
+          <div class="form-group mb-3">
+            <label for="telefono">Teléfono</label>
+            <input type="text" class="form-control form-control-lg custom-input" id="telefono" placeholder="Teléfono" formControlName="telefono">
+            <small *ngIf="telefono?.invalid && (telefono?.dirty || telefono?.touched)" class="text-danger">
+              {{ telefono?.hasError('required') ? 'Campo requerido' : 'Ingrese numeros'  }}
+            </small>
+          </div>
+  
+          <!-- Pregunta 1 -->
+          <div class="form-group mb-3">
+            <label>Seleccione el juego que le gustó más</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="ahorcado" value="Ahorcado" formControlName="pregunta1">
+              <label class="form-check-label" for="ahorcado">Ahorcado</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="preguntados" value="Preguntados" formControlName="pregunta1">
+              <label class="form-check-label" for="preguntados">Preguntados</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="pokemon" value="Pokemon" formControlName="pregunta1">
+              <label class="form-check-label" for="pokemon">Pokémon</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="mayormenor" value="Mayor o Menor" formControlName="pregunta1">
+              <label class="form-check-label" for="mayormenor">Mayor o Menor</label>
+            </div>
+          </div>
+  
+          <!-- Pregunta 2 -->
+          <div class="form-group mb-3">
+            <label for="pregunta2">¿Del 1 al 10 cuánto te gustó?</label>
+            <div class="d-flex align-items-center">
+              <input type="range" class="form-range" id="pregunta2" min="1" max="10" formControlName="pregunta2" (input)="updateValue($event)">
+              <span class="ms-2" id="rangeValue">{{form.get('pregunta2')?.value || 1}}</span>
+            </div>
+            <small *ngIf="pregunta2?.invalid && (pregunta2?.touched || pregunta2?.dirty)" class="text-danger">
+              Campo requerido
+            </small>
+          </div>
+  
+          <!-- Pregunta 3 -->
+          <div class="form-group mb-3">
+            <label for="pregunta3">Contanos qué juego te gustaría que incluyamos</label>
+            <textarea class="form-control" id="pregunta3" rows="3" formControlName="pregunta3"></textarea>
+            <small *ngIf="pregunta3?.invalid && (pregunta3?.touched || pregunta3?.dirty)" class="text-danger">
+              Campo requerido
+            </small>
+          </div>
+  
+          <!-- Botón Enviar -->
+          <div class="d-grid">
+            <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

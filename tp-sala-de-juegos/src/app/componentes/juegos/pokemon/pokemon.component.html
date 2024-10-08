@@ -1,29 +1,23 @@
-<!-- <img class = "pokemonImagen" src = "{{pokemonImagen}} ">
-
-
-<div class="input-group mb-3">
-    <div class="input-group-text">
-      <input type="text" [(ngModel)]="respuesta" >
-    </div>
-  </div>
-
-  <button (click) = "jugar()">Enviar</button> -->
-  <div class="container mt-5 d-flex justify-content-center">
-    <div class="card text-center shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;">
-      <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card text-center shadow-lg p-3 mb-5 rounded" style="width: 50rem;">
+      <div class="d-flex justify-content-center align-items-center" style="height: 250px;">
         <img class="pokemonImagen" [src]="pokemonImagen" alt="Imagen del Pokémon">
       </div>
       <div class="card-body">
-        <h5 class="card-title">{{ pokemonAdivinado ? pokemon.name : "¿Quién es este Pokémon?" }}</h5>
-        <p class="card-text">Introduce el nombre del Pokémon para adivinarlo.</p>
-        
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Escribe el nombre" [(ngModel)]="respuesta">
-          <button class="btn btn-custom" (click)="jugar()">Enviar</button>
+        <h5 class="card-title">{{ pokemonAdivinado ? pokemon.name : "¿De que tipo es este pokemon?" }}</h5>
+        <p class="card-text">Selecciona el tipo</p>
+  
+        <div class="row g-3">
+          <div class="col-6" *ngFor="let tipo of tiposDisponibles | keyvalue">
+            <button class="btn btn-custom btn-lg w-100" (click)="jugar(tipo.value)">
+              {{ tipo.value | titlecase }}
+            </button>
+          </div>
         </div>
-        
-        <small class="text-muted">Catch 'Em All! (?</small>
+  
+        <small class="text-muted mt-3">¡Atrápalos a todos!</small>
       </div>
     </div>
   </div>
   
+

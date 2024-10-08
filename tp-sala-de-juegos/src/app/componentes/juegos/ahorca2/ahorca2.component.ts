@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject} from '@angular/core';
 import Swal from 'sweetalert2';
 import { AhorcadoService } from '../../../services/ahorcado/ahorcado.service';
+import { Ahorcado } from './ahorcado';
+import { PuntajeService } from '../../../services/puntaje.service';
 
 const CANTIDAD_ERROR = 6;
 
@@ -10,70 +12,96 @@ const CANTIDAD_ERROR = 6;
   styleUrl: './ahorca2.component.scss'
 })
 export class Ahorca2Component implements OnInit {
-  readonly abecedario = ("A,B,C,D,E,F,G,H,I,J,K,L,M,N,Ñ,O,P,Q,R,S,T,U,V,W,X,Y,Z".split(","));
+  public intentos: number = 0;
+  public ganadorONo:boolean | undefined = undefined;
 
-  imagen: string;
-  public palabra!: string;
-  intentoError: number = 0 ;
-  letrasSeleccionadas: string[] = []
-  finDeJuego = false;
-  intentos = CANTIDAD_ERROR;
+  public palabras: string[] = Ahorcado.obtenerPalabra();
+  public letrasTeclado: string[] = Ahorcado.obtenerLetraTeclado();
+  public letraClickeada: {[letter:string]:boolean} = {};
 
-  constructor(public ahorcadoService: AhorcadoService){
-    this.imagen = "../../../../assets/ahorcado/6.png";
+  public palabraOculta:string = "";
+  public palabraAdivinar:string = this.palabras[Math.floor(Math.random() * this.palabras.length)];
+  public puntaje: number = 0;
+
+  constructor(public registroPuntaje: PuntajeService){
+
+  }
+ 
+  ngOnInit(): void {
+   this.iniciarNuevaPalabra();
   }
 
-  //ahorcadoService = Inject(AhorcadoService);
+  iniciarNuevaPalabra(){
+    this.palabraAdivinar = this.palabras[Math.floor(Math.random() * this.palabras.length)];
+    this.palabraOculta = this.palabraAdivinar.split('')
+      .map(letter => letter = '_ ')
+      .join('');
+      this.letraClickeada = {}; 
+    console.log('palabra oculta: ', this.palabraAdivinar);
+  }
+ 
+  corroborarLetra(letter:string){
+    if(!this.letraClickeada[letter]){
+      this.buscarLetra(letter);
+      
+      const letterHidden = this.palabraOculta.split(" ");
+      for(let i = 0; i<= this.palabraAdivinar.length;i++){
+        if(this.palabraAdivinar[i] == letter)
+          letterHidden[i] = letter;
+      }
+      
+      this.palabraOculta = letterHidden.join(" ");
+      this.letraClickeada[letter] = true;
 
-  ngOnInit(){
-    this.reiniciarJuego();
-   }
-
-   reiniciarJuego(){
-    this.intentoError = 0;
-    this.letrasSeleccionadas = [];
-    this.finDeJuego = false;
-    this.intentos = CANTIDAD_ERROR;
-    this.ahorcadoService.getRandomPalabra()
-   }
-  
-   letrasPalabra(){
-    return this.palabra.trim().split('');
-   }
-  
-   letraEnLaPalabra(letra:string){
-    return !!!this.palabra.includes(letra)
-   }
-  
-   elegirLetra(letra:string){
-    this.letrasSeleccionadas.push(letra)
-    if(!this.palabra.includes(letra)){
-      this.intentoError ++;
-      this.intentoError = CANTIDAD_ERROR - this.intentoError;
-      this.imagen = "../../../../assets/ahorcado/" +this.intentos+".png";
+      this.ganarOPerder();
     }
+  }
+
   
-    if(this.intentoError == CANTIDAD_ERROR){
-      this.finDeJuego = true;
+  reiniciarJuego(){
+    this.intentos = 0;
+    this.iniciarNuevaPalabra();
+    this.ganadorONo = undefined;
+  }
+  reiniciarJuegoConPuntaje() {
+    this.intentos = 0;
+    this.puntaje = 0;
+    this.reiniciarJuego(); 
+  }
+
+  ganarOPerder(){
+    const wordInArray = this.palabraOculta.split(" ");
+    const checkWord = wordInArray.join("");
+    
+    if(checkWord == this.palabraAdivinar){
+      this.puntaje++;
+      this.ganadorONo = true;
       Swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: 'Perdiste :(',
-        showConfirmButton: true,
-      });
-    }else if(this.ganar()){
-      Swal.fire({
-        position: 'center',
+        title: 'Felicidades, ganaste!',
         icon: 'success',
-        title: 'Ganaste :)',
-        showConfirmButton: true,
+        confirmButtonText: 'OK'
+      }).then(() => {
+        this.iniciarNuevaPalabra();
       });
     }
-   }
-   ganar(){
-    return !!!this.letrasPalabra().find(letra => !this.letrasSeleccionadas.includes(letra))
-   }
-  
+    else if(this.intentos == 6){
+      this.ganadorONo = false;
+      Swal.fire({
+        title: 'Perdiste, segui intentando!',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      this.reiniciarJuegoConPuntaje();
+    }
   }
+
+ 
+  buscarLetra(letter:string){
+    if(!this.palabraAdivinar.includes(letter)){
+      this.intentos++;
+    }
+  }
+}
+  
   
 
