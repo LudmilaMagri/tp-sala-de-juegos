@@ -54,7 +54,7 @@ main {
               transition: background-color 0.3s ease;
   
               &:hover {
-                background-color: #98e05d;
+                background-color: rgb(212, 115, 231);
               }
             }
   
@@ -63,7 +63,7 @@ main {
             }
   
             .letter-no-clicked {
-              background-color: #28a745;
+              background-color: rgb(220, 149, 235);
             }
           }
   

@@ -1,38 +1,22 @@
-// .pokemonImagen {
-//     max-height: 2000px;
-//     max-width: 2000px;
-//     object-fit: contain;
-//     background-color: #f8f9fa; 
-//   }
-  
-//   .card-body {
-//     border: none;
-
-//   }
-  
-//   .input-group input {
-//     border-radius: 0;
-//   }
-  
-//   .input-group button {
-//     border-radius: 0;
-//   }
-  
-//   .btn-custom{
-//     background-color: #FFD700	;
-//     color: #0000FF;
-//     border: none;
-//   }
-
-.pokemonImagen {
-  max-height: 1500px; /* Aumentar altura máxima */
-  max-width: 1500px;  /* Aumentar ancho máximo */
-  background-color: #f0f0f0;
+#container {
+  background-image: url("../../../../assets/wallpaper.jpg");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  background-attachment: fixed;  
+  min-height: 100vh;             
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.pokemonImagen {
+  max-height: 1500px;
+  max-width: 1500px;
+}
 
 .card {
-  background-color: #f0f0f0; /* Amarillo Pokémon */
+  background-color: rgba(240, 240, 240, 0.9); 
   border: none;
 }
 
@@ -41,14 +25,14 @@
 }
 
 .btn-custom {
-  background-color: #FFD700; /* Botones blancos */
-  color: #0000FF; /* Texto azul */
-  border: 2px solid #0000FF; /* Borde amarillo Pokémon */
+  background-color:#ffcb05;
+  color: #3c5aa6;
+  border: 2px solid #3c5aa6;
   font-weight: bold;
 }
 
 .btn-custom:hover {
-  background-color: #f0f0f0; /* Cambiar a gris claro al pasar el mouse */
+  background-color: #c7a008;
 }
 
 .input-group input {
@@ -57,4 +41,12 @@
 
 .input-group button {
   border-radius: 0;
+}
+.card-title{
+  font-size: 40px;
+  color: #0c0b0b;
+}
+.card-text{
+  font-size: 25px;
+  color: #0c0b0b;
 }

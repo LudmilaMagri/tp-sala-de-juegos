@@ -1,3 +1,10 @@
+#titulo{
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+
+}
 #card-container{
     width: 70%;
     margin: 0 auto;
@@ -57,4 +64,8 @@ p
   .button-group .btn {
     padding: 10px 20px;
     font-size: 1.2rem;
+    color: black;
+    background-color: rgb(221, 185, 228);
+    opacity: 0.8;
+    
   }

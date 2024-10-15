@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PreguntadosService } from '../../../services/preguntados/preguntados.service';
 import { subscribeOn, Subscription } from 'rxjs';
-import Swal from 'sweetalert2';
 import { PuntajeService } from '../../../services/puntaje.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -71,21 +71,25 @@ ngOnDestroy(): void {
   corroborarRespuesta(seleccionIndex: number){
     if(seleccionIndex === this.opcionCorrectaIndex){
       Swal.fire({
-        title:  'Correcto!',
-        text: `Sumaste 1 punto :)`,
-        icon: 'success',
-        showConfirmButton: false,
-        timer: 1500
+        title:  "Correcto!",
+        text: "Sumaste 1 punto :)",
+        icon: "success",
+        confirmButtonText: "Jugar otra vez"
+
+
+       // showConfirmButton: false,
+        //timer: 1500
       });
       this.puntaje ++;
       this.jugar();
     }else{
       Swal.fire({
-        title:  'Incorrecto, perdiste!',
+        title:  "Incorrecto, perdiste!",
         text: `Tu puntaje: ${this.puntaje}.`,
-        icon: 'error',
-        showConfirmButton: false,
-        timer: 1500
+        icon: "error",
+        confirmButtonText: "Jugar otra vez"
+        //showConfirmButton: false,
+       // timer: 1500
       });
       this.finDeJuego();
     }

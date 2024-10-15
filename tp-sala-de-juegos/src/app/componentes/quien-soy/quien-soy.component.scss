@@ -1,7 +1,73 @@
-#quien-soy-container{
-    background-color: #252525;
-}
+// #quien-soy-container{
+//     background-color: #252525;
+// }
 
-p, h3, h1{
-    color: #C1CBD9;
-}
+// p, h3, h1{
+//     color: #C1CBD9;
+// }
+
+#quien-soy-container {
+    background-color: #2f2d30;
+    opacity: 0.9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+    .row {
+      margin-bottom: 2rem;
+  
+      .col-auto {
+        margin: 1rem auto;
+  
+        img {
+          border-radius: 50%;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  
+    #general-container {
+      h1 {
+        font-size: 3rem;
+        color: #b593ec;
+        font-weight: bold;
+      }
+  
+      p {
+        font-size: 2rem;
+        color: #eeecec;
+        line-height: 1.6;
+      }
+    }
+  
+    .col-md-5 {
+      .border {
+        border-color: #111213;
+      }
+  
+      .position-relative {
+        background-color: rgb(102, 99, 99);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      h3 {
+        font-size: 40px;
+        color: #b593ec;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        font-size: 25px;
+        color: #eeecec;
+      }
+  
+      img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  

@@ -25,7 +25,7 @@ export class EncuestaComponent implements OnInit{
       nombre: new FormControl('', [Validators.pattern('^[a-zA-Z]+$'),Validators.required]),
       apellido: new FormControl('', [Validators.pattern('^[a-zA-Z]+$'),Validators.required]),
       edad: new FormControl('', [Validators.pattern('^[0-9]+$'),Validators.required, Validators.min(18), Validators.max(99)]),
-      telefono: new FormControl('', [Validators.pattern('^[0-9]+$'),Validators.required, Validators.maxLength(10)]),
+      telefono: new FormControl('', [Validators.pattern('^[0-9]+$'),Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
       pregunta1: new FormControl('', [Validators.required]),
       pregunta2: new FormControl('', [Validators.required]),
       pregunta3: new FormControl('', [Validators.required])

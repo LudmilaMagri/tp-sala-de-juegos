@@ -1,10 +1,11 @@
 <main class="preguntados-container">
     <div class="flag-container">
+      <h1>¿De qué país es esta bandera?</h1>
       <img [src]="flagUrl" alt="Bandera" class="flag-img" />
     </div>
   
     <div class="opciones-container">
-      <h2>Selecciona el país de la bandera:</h2>
+      <h2>Selecciona el país:</h2>
       <div class="opciones">
         <button
           *ngFor="let opcion of opcionActual; let i = index"

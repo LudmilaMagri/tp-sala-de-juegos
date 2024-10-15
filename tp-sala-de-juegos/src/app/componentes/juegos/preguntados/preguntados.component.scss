@@ -1,66 +1,155 @@
+// .preguntados-container {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 20px;
+//     background-color: #f5f5f5;
+//   }
+  
+//   .flag-container {
+//     margin-bottom: 20px;
+  
+//     .flag-img {
+//       max-width: 200px;
+//       height: auto;
+//       border: 2px solid #ddd;
+//       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//       border-radius: 8px;
+//     }
+//   }
+  
+//   .opciones-container {
+//     text-align: center;
+//     margin-bottom: 20px;
+  
+//     h2 {
+//       font-size: 1.5rem;
+//       margin-bottom: 10px;
+//     }
+  
+//     .opciones {
+//       display: flex;
+//       flex-wrap: wrap;
+//       justify-content: center;
+//       gap: 15px;
+//     }
+  
+//     .opcion-btn {
+//       background-color: #007bff;
+//       color: #fff;
+//       border: none;
+//       padding: 10px 20px;
+//       border-radius: 5px;
+//       cursor: pointer;
+//       transition: background-color 0.3s ease;
+  
+//       &:hover {
+//         background-color: #0056b3;
+//       }
+  
+//       &:focus {
+//         outline: none;
+//         box-shadow: 0 0 5px #007bff;
+//       }
+//     }
+//   }
+  
+//   .puntaje-container {
+//     margin-top: 20px;
+  
+//     p {
+//       font-size: 1.2rem;
+//       font-weight: bold;
+//     }
+//   }
+  
 .preguntados-container {
+
+  background-image: url("../../../../assets/mapa.jpg"); 
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+
+  /* Sombra sutil para todo el contenedor */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+h1{
+  font-size: 3rem;
+    margin-bottom: 100px;
+    color: #ffffff;
+    font-weight: 600;
+}
+.flag-container {
+  margin-bottom: 30px;
+
+  .flag-img {
+    max-width: 250px;
+    height: auto;
+    border: 3px solid #e0e0e0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.05); /* Efecto hover */
+    }
+  }
+}
+
+.opciones-container {
+  text-align: center;
+  margin-bottom: 30px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .opciones {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
-    background-color: #f5f5f5;
+    gap: 20px;
   }
+
+  .opcion-btn {
+    background-color: rgb(213, 149, 226);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
   
-  .flag-container {
-    margin-bottom: 20px;
-  
-    .flag-img {
-      max-width: 200px;
-      height: auto;
-      border: 2px solid #ddd;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-  }
-  
-  .opciones-container {
-    text-align: center;
-    margin-bottom: 20px;
-  
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+    &:hover {
+      background-color: rgb(202, 100, 223);
+      transform: translateY(-3px);
     }
   
-    .opciones {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-  
-    .opcion-btn {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: #0056b3;
-      }
-  
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 5px #007bff;
-      }
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 8px #28a745;
     }
   }
-  
-  .puntaje-container {
-    margin-top: 20px;
-  
-    p {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
+}
+
+.puntaje-container {
+  margin-top: 30px;
+
+  p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ec52e5;
   }
-  
+}

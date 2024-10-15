@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col text-center">
+        <h1 class="titulo-custom">Ranking</h1>
+        <p class="text-secondary">Total de puntajes registrados: {{ countPuntajes }}</p>
+      </div>
+    </div>
+  
+    <!-- Tabla de puntajes -->
+    <div class="row justify-content-center">
+      <div class="col col-sm-10 col-lg-8">
+        <table class="table table-striped table-bordered mt-4">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Puntaje</th>
+              <th scope="col">Juego</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Iteración sobre la colección de puntajes -->
+            <tr *ngFor="let puntaje of puntajeCollection; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ puntaje.user || 'Anónimo' }}</td>
+              <td>{{ puntaje.puntaje }}</td>
+              <td>{{ puntaje.juego }}</td>
+              <td>{{ puntaje.fecha?.toDate() | date:'short' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

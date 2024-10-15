@@ -1,4 +1,4 @@
-<div class="container mt-5 d-flex justify-content-center">
+<!-- <div class="container mt-5 d-flex justify-content-center" id = "container">
     <div class="card text-center shadow-lg p-3 mb-5 rounded" style="width: 50rem;">
       <div class="d-flex justify-content-center align-items-center" style="height: 250px;">
         <img class="pokemonImagen" [src]="pokemonImagen" alt="Imagen del Pokémon">
@@ -20,4 +20,25 @@
     </div>
   </div>
   
+ -->
+ <div class="container-fluid vh-100 d-flex justify-content-center align-items-center" id="container">
+  <div class="card text-center shadow-lg p-3 mb-5 rounded" style="width: 50rem;">
+    <div class="d-flex justify-content-center align-items-center" style="height: 250px;">
+      <img class="pokemonImagen" [src]="pokemonImagen" alt="Imagen del Pokémon">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ pokemonAdivinado ? pokemon.name : "¿De que tipo es este pokemon?" }}</h5>
+      <p class="card-text">Selecciona la opcion correcta</p>
 
+      <div class="row g-3">
+        <div class="col-6" *ngFor="let tipo of tiposDisponibles | keyvalue">
+          <button class="btn btn-custom btn-lg w-100" (click)="jugar(tipo.value)">
+            {{ tipo.value | titlecase }}
+          </button>
+        </div>
+      </div>
+
+      <small class="text-muted mt-3">¡Atrápalos a todos!</small>
+    </div>
+  </div>
+</div>

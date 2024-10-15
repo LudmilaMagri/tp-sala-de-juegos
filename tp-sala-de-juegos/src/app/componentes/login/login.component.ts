@@ -99,7 +99,7 @@ registroLoginBD()
 autologuearse(){
   this.user = 'test@test.com';
   this.password = 'contraseña';
-  this.login('/home');
+  //this.login('/home');
 }
 
 
